@@ -25,6 +25,7 @@ FOUNDATION_EXPORT const unsigned char CocoaLumberjackVersionString[];
 
 // Core
 #import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/CLIColor.h>
 
 // Main macros
 #import <CocoaLumberjack/DDLogMacros.h>
