@@ -54,8 +54,11 @@ static void (*dd_asl_release)(aslresponse obj);
             #pragma GCC diagnostic pop
         #else
             // Building on lastest, correct SDK, targeting latest API
-            dd_asl_next    = &asl_next;
-            dd_asl_release = &asl_release;
+            #pragma GCC diagnostic push
+            #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+                dd_asl_next    = &asl_next;
+                dd_asl_release = &asl_release;
+            #pragma GCC diagnostic pop
         #endif
     #else
         // Building on old SDKs, targeting deprecated API
@@ -93,11 +96,14 @@ static void (*dd_asl_release)(aslresponse obj);
 
 + (void)configureAslQuery:(aslmsg)query {
     const char param[] = "7";  // ASL_LEVEL_DEBUG, which is everything. We'll rely on regular DDlog log level to filter
-    
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     asl_set_query(query, ASL_KEY_LEVEL, param, ASL_QUERY_OP_LESS_EQUAL | ASL_QUERY_OP_NUMERIC);
 
     // Don't retrieve logs from our own DDASLLogger
     asl_set_query(query, kDDASLKeyDDLog, kDDASLDDLogValue, ASL_QUERY_OP_NOT_EQUAL);
+#pragma GCC diagnostic pop
     
 #if !TARGET_OS_IPHONE || (defined(TARGET_SIMULATOR) && TARGET_SIMULATOR)
     int processId = [[NSProcessInfo processInfo] processIdentifier];
@@ -108,6 +114,8 @@ static void (*dd_asl_release)(aslresponse obj);
 }
 
 + (void)aslMessageReceived:(aslmsg)msg {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     const char* messageCString = asl_get( msg, ASL_KEY_MSG );
     if ( messageCString == NULL )
         return;
@@ -156,6 +164,7 @@ static void (*dd_asl_release)(aslresponse obj);
                                                           timestamp:timeStamp];
     
     [DDLog log:async message:logMessage];
+#pragma GCC diagnostic pop
 }
 
 + (void)captureAslLogs {
@@ -190,6 +199,8 @@ static void (*dd_asl_release)(aslresponse obj);
             // At least one message has been posted; build a search query.
             @autoreleasepool
             {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
                 aslmsg query = asl_new(ASL_TYPE_QUERY);
                 char stringValue[64];
 
@@ -221,7 +232,7 @@ static void (*dd_asl_release)(aslresponse obj);
                     notify_cancel(token);
                     return;
                 }
-
+#pragma GCC diagnostic pop
             }
         });
     }
