@@ -230,6 +230,7 @@ SKIP_INSTALL = YES
 
 // The list of supported platforms from which a base SDK can be used. This setting is used if the product can be built for multiple platforms using different SDKs.
 SUPPORTED_PLATFORMS = macosx iphoneos iphonesimulator watchsimulator watchos appletvsimulator appletvos
+ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES
 
 // macOS Catalyst support
 SUPPORTS_MACCATALYST = YES
