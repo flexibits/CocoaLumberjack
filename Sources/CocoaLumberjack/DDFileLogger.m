@@ -1787,13 +1787,13 @@ static NSString *_xattrToExtensionName(NSString *attrName) {
 - (NSComparisonResult)reverseCompareByCreationDate:(DDLogFileInfo *)another {
     __auto_type us = [self creationDate];
     __auto_type them = [another creationDate];
-    return [them compare:us];
+    return [them compare:(NSDate *)us];
 }
 
 - (NSComparisonResult)reverseCompareByModificationDate:(DDLogFileInfo *)another {
     __auto_type us = [self modificationDate];
     __auto_type them = [another modificationDate];
-    return [them compare:us];
+    return [them compare:(NSDate *)us];
 }
 
 @end
@@ -1806,7 +1806,7 @@ static NSString *_xattrToExtensionName(NSString *attrName) {
  * want (even if device is locked). Thats why that attribute have to be changed to
  * NSFileProtectionCompleteUntilFirstUserAuthentication.
  */
-BOOL doesAppRunInBackground() {
+BOOL doesAppRunInBackground(void) {
     BOOL answer = NO;
 
     NSArray *backgroundModes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIBackgroundModes"];
