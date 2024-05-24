@@ -1,6 +1,6 @@
 // Software License Agreement (BSD License)
 //
-// Copyright (c) 2010-2022, Deusty, LLC
+// Copyright (c) 2010-2023, Deusty, LLC
 // All rights reserved.
 //
 // Redistribution and use of this software in source and binary forms,
@@ -134,7 +134,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelAll;
     __auto_type info2 = logger.currentLogFileInfo;
     XCTAssertEqualObjects(info1.filePath, info2.filePath);
 
-    info1.isArchived = YES;
+    info2.isArchived = YES;
 
     __auto_type info3 = logger.currentLogFileInfo;
     __auto_type info4 = logger.currentLogFileInfo;
