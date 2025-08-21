@@ -1210,7 +1210,9 @@ static DDTTYLogger *sharedInstance;
             // The log message has already been formatted.
             const size_t maxIovecLen = 5;
             size_t iovecLen = _automaticallyAppendNewlineForCustomFormatters ? 5 : 4;
-            struct iovec v[maxIovecLen] = { 0 };
+
+            // This is initialized with a static value rather than maxIovecLen to avoid a warning (Variable length array folded to constant array as an extension)
+            struct iovec v[5] = { 0 };
 
             if (colorProfile) {
                 v[0].iov_base = colorProfile->fgCode;
