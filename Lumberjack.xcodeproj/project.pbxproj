@@ -68,7 +68,7 @@
 		0A26B5B322DE3700004EE6A7 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57422DE34AE004EE6A7 /* DDASLLogCapture.m */; };
 		0A26B5B422DE3700004EE6A7 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57122DE34AE004EE6A7 /* DDASLLogger.m */; };
 		0A26B5B522DE3700004EE6A7 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57622DE34AE004EE6A7 /* DDFileLogger.m */; };
-		0A26B5B622DE3700004EE6A7 /* DDFileLogger+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A26B57222DE34AE004EE6A7 /* DDFileLogger+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0A26B5B622DE3700004EE6A7 /* DDFileLogger+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A26B57222DE34AE004EE6A7 /* DDFileLogger+Internal.h */; };
 		0A26B5B722DE3700004EE6A7 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57722DE34AE004EE6A7 /* DDLog.m */; };
 		0A26B5B822DE3700004EE6A7 /* DDLoggerNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57322DE34AE004EE6A7 /* DDLoggerNames.m */; };
 		0A26B5B922DE3700004EE6A7 /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A26B57922DE34AE004EE6A7 /* DDOSLogger.m */; };
@@ -396,7 +396,6 @@
 				071909E3243C9FFC001C431F /* DDFileLogger.h in Headers */,
 				071909E7243C9FFC001C431F /* DDFileLogger+Buffering.h in Headers */,
 				071909E0243C9FFC001C431F /* DDLoggerNames.h in Headers */,
-				0A26B5B622DE3700004EE6A7 /* DDFileLogger+Internal.h in Headers */,
 				071909EA243C9FFC001C431F /* DDLog+LOGV.h in Headers */,
 				0752523E22E07638005D30B3 /* DDLegacyMacros.h in Headers */,
 				071909EB243C9FFC001C431F /* CLIColor.h in Headers */,
@@ -404,6 +403,7 @@
 				0A26B5BC22DE37FB004EE6A7 /* CocoaLumberjack.h in Headers */,
 				071909E6243C9FFC001C431F /* DDAssertMacros.h in Headers */,
 				071909DD243C9FFC001C431F /* DDLog.h in Headers */,
+				0A26B5B622DE3700004EE6A7 /* DDFileLogger+Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
